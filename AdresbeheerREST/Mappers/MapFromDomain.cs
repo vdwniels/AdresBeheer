@@ -1,13 +1,23 @@
 ﻿using AdresbeheerBL.Model;
+using AdresbeheerBL.Services;
+using AdresbeheerREST.Exceptions;
 using AdresbeheerREST.Model.Output;
 
 namespace AdresbeheerREST.Mappers
 {
     public static class MapFromDomain
     {
-        public static GemeenteRESToutputDTO MapFromGemeenteDomain(Gemeente gemeente)
+        public static GemeenteRESToutputDTO MapFromGemeenteDomain(string url,Gemeente gemeente)
         {
-            return null;
+            try
+            {
+                string gemeenteURL = $"{url}/gemeente/{gemeente.NIScode}";
+                List<string> straten = straatService.GeefStratenGemeente(gemeente);
+            }
+            catch(Exception ex)
+            {
+                throw new MapException("MapFromGemeenteDomain", ex);
+            }
         }
     }
 }

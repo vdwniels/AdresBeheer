@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace AdresbeheerBL.Model
 {
     public class Gemeente
-    {//aaaaaaaaaaaaaaaaaaaaaaaaaaa
+    {
         public Gemeente(int nIScode, string gemeentenaam)
         {
             ZetNIScode(nIScode);
