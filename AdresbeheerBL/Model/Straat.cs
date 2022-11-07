@@ -46,5 +46,9 @@ namespace AdresbeheerBL.Model
             if (nieuwegemeente == Gemeente) throw new StraatException("ZetGemeente - niet nieuw");
             Gemeente = nieuwegemeente;
         }
+        public override string ToString()
+        {
+            return $"Id : {Id} - StraatNaam : {StraatNaam} - NIScode : {Gemeente.NIScode} - gemeenteNaam : {Gemeente.Gemeentenaam}";
+        }
     }
 }

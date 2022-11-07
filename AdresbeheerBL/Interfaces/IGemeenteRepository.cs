@@ -10,5 +10,7 @@ namespace AdresbeheerBL.Interfaces
     public interface IGemeenteRepository
     {
         Gemeente GeefGemeente(int gemeenteId);
+        bool HeeftGemeente(int nIScode);
+        void VoegGemeenteToe(Gemeente gemeente);
     }
 }
